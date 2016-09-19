@@ -59,7 +59,7 @@ defmodule HTTPipe.Adapters.Hackney.Mixfile do
       {:earmark, "~> 1.0", only: [:dev, :docs]},
       {:ex_doc, "~> 0.13", only: [:dev, :docs]},
       {:hackney, "~> 1.6.0"},
-      {:httpipe, git: "git@github.com:DavidAntaramian/httpipe.git"},
+      {:httpipe, "~> 0.9.0"},
     ]
   end
 end
