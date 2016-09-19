@@ -1,6 +1,6 @@
-defmodule HTTPlaster.Adapters.Hackney do
-  @behaviour HTTPlaster.Adapter
-  alias HTTPlaster.{Adapter, Request}
+defmodule HTTPipe.Adapters.Hackney do
+  @behaviour HTTPipe.Adapter
+  alias HTTPipe.{Adapter, Request}
 
 
   @spec execute_request(Request.http_method, String.t, Request.body,
@@ -13,12 +13,12 @@ defmodule HTTPlaster.Adapters.Hackney do
     |> handle_response()
   end
 
-  # HTTPlaster indicates an empty request body with
+  # HTTPipe indicates an empty request body with
   # nil but Hackney expects an empty binary instead
   defp request_body(nil), do: ""
   defp request_body(b), do: b
 
-  # The headers will be sent from HTTPlaster as a map,
+  # The headers will be sent from HTTPipe as a map,
   # but Hackney expects the headers to be a Keyword list
   defp request_headers(headers), do: Enum.map(headers, &(&1))
 

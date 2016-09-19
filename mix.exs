@@ -1,9 +1,9 @@
-defmodule HTTPlaster.Adapters.Hackney.Mixfile do
+defmodule HTTPipe.Adapters.Hackney.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :httplaster_adapters_hackney,
+      app: :httpipe_adapters_hackney,
       version: "0.1.0",
       elixir: "~> 1.3",
       build_embedded: Mix.env == :prod,
@@ -24,7 +24,7 @@ defmodule HTTPlaster.Adapters.Hackney.Mixfile do
   defp deps do
     [
       {:hackney, "~> 1.6.0"},
-      {:httplaster, git: "git@github.com:DavidAntaramian/httplaster.git"}
+      {:httpipe, git: "git@github.com:DavidAntaramian/httpipe.git"}
     ]
   end
 end

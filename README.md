@@ -1,4 +1,4 @@
-# HTTPlaster.Adapters.Hackney
+# HTTPipe.Adapters.Hackney
 
 **TODO: Add description**
 
@@ -6,19 +6,19 @@
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
-  1. Add `httplaster_adapters_hackney` to your list of dependencies in `mix.exs`:
+  1. Add `httpipe_adapters_hackney` to your list of dependencies in `mix.exs`:
 
     ```elixir
     def deps do
-      [{:httplaster_adapters_hackney, "~> 0.1.0"}]
+      [{:httpipe_adapters_hackney, "~> 0.1.0"}]
     end
     ```
 
-  2. Ensure `httplaster_adapters_hackney` is started before your application:
+  2. Ensure `httpipe_adapters_hackney` is started before your application:
 
     ```elixir
     def application do
-      [applications: [:httplaster_adapters_hackney]]
+      [applications: [:httpipe_adapters_hackney]]
     end
     ```
 

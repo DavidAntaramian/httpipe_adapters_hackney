@@ -1,4 +1,4 @@
 use Mix.Config
 
-config :httplaster, adapter: HTTPlaster.Adapters.Hackney
+config :httpipe, adapter: HTTPipe.Adapters.Hackney
 
