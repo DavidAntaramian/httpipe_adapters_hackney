@@ -1,30 +1,65 @@
 defmodule HTTPipe.Adapters.Hackney.Mixfile do
   use Mix.Project
 
+  @project_description """
+  Hackney-based adapter for HTTPipe
+  """
+
+  @source_url "https://github.com/davidantaramian/httpipe_adapters_hackney"
+  @version "0.9.0"
+
   def project do
     [
       app: :httpipe_adapters_hackney,
-      version: "0.1.0",
+      name: "HTTPipe Hackney Adapter",
+      version: @version,
       elixir: "~> 1.3",
+      description: @project_description,
+      source_url: @source_url,
+      homepage_url: @source_url,
+      package: package(),
+      deps: deps(),
+      docs: docs(),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps: deps()
     ]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
     [
-      applications: [:hackney, :logger]
+      applications: [:hackney, :httpipe, :logger]
+    ]
+  end
+
+  defp docs() do
+    [
+      source_ref: "v#{@version}",
+      main: "README",
+      extras: [
+        "README.md": [title: "README"]
+      ]
+    ]
+  end
+
+  defp package() do
+    [
+      name: :httpipe_adapters_hackney,
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["David Antaramian"],
+      licenses: ["ISC"],
+      links: %{
+        "GitHub" => @source_url,
+        "Documentation" => "https://hexdocs.pm/httpipe_adapters_hackney/readme.html"
+      }
     ]
   end
 
   defp deps do
     [
+      {:earmark, "~> 1.0", only: [:dev, :docs]},
+      {:ex_doc, "~> 0.13", only: [:dev, :docs]},
       {:hackney, "~> 1.6.0"},
-      {:httpipe, git: "git@github.com:DavidAntaramian/httpipe.git"}
+      {:httpipe, git: "git@github.com:DavidAntaramian/httpipe.git"},
     ]
   end
 end
