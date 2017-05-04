@@ -58,7 +58,7 @@ defmodule HTTPipe.Adapters.Hackney.Mixfile do
     [
       {:earmark, "~> 1.0", only: [:dev, :docs]},
       {:ex_doc, "~> 0.13", only: [:dev, :docs]},
-      {:hackney, "~> 1.7.0"},
+      {:hackney, "~> 1.8 or ~> 1.7 or ~> 1.6"},
       {:httpipe, "~> 0.9.0"},
     ]
   end
