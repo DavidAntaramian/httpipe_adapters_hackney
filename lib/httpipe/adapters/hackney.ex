@@ -28,6 +28,10 @@ defmodule HTTPipe.Adapters.Hackney do
     Enum.map(headers, &(&1))
   end
 
+  defp handle_response({:ok, status_code, resp_headers}) do
+    headers = process_response_headers(resp_headers)
+    {:ok, {status_code, headers, :nil}}
+  end
   defp handle_response({:ok, status_code, resp_headers, client_ref}) do
     case get_body(client_ref) do
       {:ok, body} ->
