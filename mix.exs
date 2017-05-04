@@ -6,7 +6,7 @@ defmodule HTTPipe.Adapters.Hackney.Mixfile do
   """
 
   @source_url "https://github.com/davidantaramian/httpipe_adapters_hackney"
-  @version "0.10.0"
+  @version "0.11.0"
 
   def project do
     [
